@@ -1,15 +1,12 @@
 class Like < ApplicationRecord
-  belongs_to :user
   belongs_to :post
-  after_create :update_counter
+  belongs_to :author, class_name: 'User'
 
-  def update_counter
-    if post.likes_counter
-      post.likes_counter += 1
-    else
-      post.likes_counter = 1
-    end
-    post.save
-    post.save
+  after_save :update_like_counter
+
+  def update_like_counter
+    post.increment!(:likes_count)
   end
+
+  private :update_like_counter
 end
