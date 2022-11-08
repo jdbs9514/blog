@@ -1,15 +1,14 @@
 class Comment < ApplicationRecord
-  belongs_to :user
   belongs_to :post
-  after_create :update_counter
+  belongs_to :author, class_name: 'User'
 
-  def update_counter
-    if post.comments_counter
-      post.comments_counter += 1
-    else
-      post.comments_counter = 1
-    end
-    post.save
-    post.save
+  after_save :update_comments_counter
+
+  def most_recent_comments
+    Comment.last(5)
+  end
+
+  def update_comments_counter
+    post.increment!(:comments_counter)
   end
 end
