@@ -7,7 +7,7 @@ The Blog App, is a website that will show the list of posts and empower readers 
 
 ## Built With
 
-https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white
+<img alt="Run on Rails Badge" src= "https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white"><br>
 
 ## Live Demo (if available)
 
