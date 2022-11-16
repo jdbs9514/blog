@@ -14,4 +14,14 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to have_http_status(:success)
     end
   end
+
+  it 'Renders the index view' do
+    get '/users/:user_id/posts'
+    expect(response).to render_template(:index)
+  end
+
+  it 'Renders template with correct text' do
+    get '/users'
+    expect(response.body).to include('Users index view')
+  end
 end
