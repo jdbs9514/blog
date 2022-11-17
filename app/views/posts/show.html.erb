@@ -1,3 +1,20 @@
-<% 5.times do%>
-<h2>Post show view</h2>
-<% end %> 
+<main>
+  <section class="post-section">
+    <h2>Information for post</h2>
+    <article class="post-info">
+      <div class="post-card">
+        <h3><%= @post.title %> by user: <%= @user.name %></h3>
+        <p>Number of comments: <%= @post.comments_counter %> - Number of likes: <%= @post.likes_counter %></p>
+        <p class="post-text"><%= @post.text %></p>
+      </div>
+    </article>
+
+    <article class="comments">
+      <ul class="total-comments">
+        <% @post.comments.each do |comment|%>
+          <li class="comment"><%= comment.author.name %>: <%= comment.text %></li>
+        <% end %>
+      </ul>
+    </article>
+  </section>
+</main>
