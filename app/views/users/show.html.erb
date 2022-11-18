@@ -6,15 +6,18 @@
         <div class="image">
           <img src="<%= @user.photo %>" alt="Image of user <%= @user.name%>" class="user-img">
         </div>
+
         <div class="counter">
           <h4><%= @user.name %></h4>
           <p>Number of post: <%= @user.post_counter %></p>
         </div>
       </div>
     </article>
+
     <article class="bio">
       <p>User bio:  <%= @user.bio %></p>
     </article>
+
     <article class="users-posts">
       <% if @user.last_three_posts.empty? %>
         <h3>This user don't have posts</h3>
@@ -36,6 +39,14 @@
     </article>
     <%= link_to user_posts_path(@user) do %>
       <button class="see-all-button">See all posts</button>
+    <% end %>
+
+    <%= link_to new_user_post_path(@user) do %>
+      <button class="see-all-button">Create a new post</button>
+    <% end %>
+
+    <%= link_to users_path do %>
+      <button class="see-all-button">Back to users list</button>
     <% end %>
   </section>
 </main>
