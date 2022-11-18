@@ -1,0 +1,17 @@
+<div class="comment-form">
+  <h1>Create a new comment or give a like</h1>
+</div>
+
+<%= form_with model: Comment, url: user_post_comments_path, class: 'comment-form', method: :post  do |f| %>
+  <div class="new-comment">
+    <%= f.label :text %>
+    <%= f.text_area :text, placeholder: 'write your comment here', :required => true, class: 'text'%>
+  </div>
+  <%= f.submit "submit" class: 'submit'%>
+<% end %>
+
+<%= form_with model: Like, url: user_post_likes_path, class: 'like.form', method: :post do |f|%>
+  <div class="likes">
+    <%= f.submit "Give like" class: 'submit'%>
+  </div>
+<% end %>
