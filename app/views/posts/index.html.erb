@@ -4,11 +4,11 @@
     <article class="user-info">
       <div class="user-card">
         <div class="image-container">
-          <img src="<%=@user.photo%>" alt="<%=@user.name %>" class="user-img">
+          <img src="<%= @user.photo%>" alt="<%= @user.name %>" class="user-img">
         </div>
         <div class="name-counter">
           <h3><%=@user.name%></h3>
-          <p>Number of post: <%=@user.post_counter%></p>
+          <p>Number of post: <%= @user.post_counter%></p>
         </div>
       </div>
     </article>
@@ -20,7 +20,7 @@
         <% @post.each do |post| %>
           <div class="post-section">
             <div class="post-card">
-              <a href='posts/<%=post.id%>'><h4>Post #: <%= post.id %> - <%= post.title %></h4></a>
+              <a href='posts/<%= post.id%>'><h4>Post #: <%= post.id %> - <%= post.title %></h4></a>
               <p class="post-text" maxlength= 150><%= post.text %></p>
               <p class="post-comments-likes">
               Comments: <%= post.comments_counter %> - Likes: <%= post.likes_counter %>
