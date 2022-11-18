@@ -1,0 +1,41 @@
+<main>
+  <section class="show-section">
+    <h2>User information</h2>
+    <article class="user-info">
+      <div class="user-card">
+        <div class="image">
+          <img src="<%= @user.photo %>" alt="Image of user <%= @user.name%>" class="user-img">
+        </div>
+        <div class="counter">
+          <h4><%= @user.name %></h4>
+          <p>Number of post: <%= @user.post_counter %></p>
+        </div>
+      </div>
+    </article>
+    <article class="bio">
+      <p>User bio:  <%= @user.bio %></p>
+    </article>
+    <article class="users-posts">
+      <% if @user.last_three_posts.empty? %>
+        <h3>This user don't have posts</h3>
+      <% else %>
+        <% @user.last_three_posts.each do |post| %>
+          <div class="posts-section">
+            <%= link_to user_post_path(@user.id, post.id) do %>
+              <div class="posts-card"> 
+                <h4>Post #: <%= post.id %> - <%= post.title %></h4>
+                <% end %>
+                <p class="post-text"><%= post.text %></p>
+                <p class="post-comments-likes">
+                  Comments: <%= post.comments_counter %> - Likes: <%= post.likes_counter %>
+                </p>
+              </div>
+          </div>
+       <% end %>
+     <% end %>
+    </article>
+    <%= link_to user_posts_path(@user) do %>
+      <button class="see-all-button">See all posts</button>
+    <% end %>
+  </section>
+</main>
