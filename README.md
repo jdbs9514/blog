@@ -37,6 +37,11 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@twitter](https://twitter.com/JODA1015)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/macoin)
 
+👤 **Diego Mero**
+- GitHub: [@DiegoMero](https://github.com/DiegoMero)
+- Twitter: [@Dimero18](https://twitter.com/Dimero18)
+- LinkedIn: [Diego](https://www.linkedin.com/in/diego-mero/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
