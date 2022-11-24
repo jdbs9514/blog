@@ -4,7 +4,7 @@
     <article class="user-info">
       <div class="user-card">
         <div class="image-container">
-          <img src="<%= @user.photo%>" alt="<%= @user.name %>" class="user-img">
+          <%= @user.photo%>
         </div>
         <div class="name-counter">
           <h3><%=@user.name%></h3>
@@ -14,7 +14,7 @@
     </article>
 
     <article class="user-post">
-      <%  if @post.empty? %>
+      <% if @post.empty? %>
         <h3>This user don't have any post</h3>
       <% else %>
         <% @post.each do |post| %>

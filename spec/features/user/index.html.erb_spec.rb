@@ -3,15 +3,14 @@ require 'rails_helper'
 RSpec.describe 'User index page', type: :feature do
   describe 'index page' do
     before :each do
-      # @user = User.create(name: 'Tom', bio: 'Teacher from ENgland', photo: 'www.photo.com')
-      visit users_path
+      visit '/users'
     end
 
-    it 'shows the username Tom' do
-      expect(page).to have_content('Tom')
+    it 'shows the username Tommy' do
+      expect(page).to have_content('Tommy')
     end
 
-    it 'shows the profile picture of Tom' do
+    it 'shows the profile picture of Tommy' do
       expect(page).to have_content('https://unsplash.com/photos/F_-0BxGuVvo')
     end
 

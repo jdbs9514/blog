@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'User show page', type: :feature do
   describe 'show page' do
     before :each do
-      @user = User.create(name: 'Tom', bio: 'Teacher from Mexico.', photo: 'https://unsplash.com/photos/F_-0BxGuVvo')
-      @id = @user.id
-      Post.create(user_id: @user, title: 'Hello', text: 'Make a new comment on this post')
-      Post.create(user_id: @user, title: 'hello', text: 'Make a new comment on this post')
-      visit user_path(@id)
+      # @user = User.create(name: 'Tom', bio: 'Teacher from Mexico.', photo: 'https://unsplash.com/photos/F_-0BxGuVvo')
+      # @id = @user.id
+      # Post.create(user_id: @user, title: 'Hello', text: 'Make a new comment on this post')
+      # Post.create(user_id: @user, title: 'hello', text: 'Make a new comment on this post')
+      visit '/users/83'
     end
 
     it 'show username' do
@@ -23,7 +23,7 @@ RSpec.describe 'User show page', type: :feature do
     end
 
     it 'show the number of post' do
-      expect(page.body).to include('Number of post: 0')
+      expect(page.body).to include('Number of post: 1')
     end
 
     it 'test the see all post button' do

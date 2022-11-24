@@ -21,7 +21,7 @@
     <%= form_with url: user_post_comments_url(@user, @post), method: :post, local: true, scope: :comment do |f| %>
       <div class="comment-area">
         <%= f.label :text, "Enter your comment here"%><br>
-        <%= f.text_area :text, class: 'text-area'%>
+        <%= f.text_area :text, class: 'text-area', id: 'text-area'%>
       </div>
       <%= f.submit "Create comment", class: 'submit-comment' %>
     <% end %>
