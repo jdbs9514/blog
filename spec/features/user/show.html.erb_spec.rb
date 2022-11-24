@@ -31,11 +31,13 @@ RSpec.describe 'User show page', type: :feature do
     end
 
     it 'test the create a new post' do
-      expect(page).to have_content('Create a new post')
+      click_link('Create a new post')
+      expect(current_path).to have_content('/users/83/posts/new')
     end
 
     it 'test the Back to user list' do
-      expect(page).to have_content('Back to users list')
+      click_link('Back to users list')
+      expect(current_path).to have_content('/users')
     end
   end
 end

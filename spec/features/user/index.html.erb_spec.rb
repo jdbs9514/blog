@@ -21,5 +21,9 @@ RSpec.describe 'User index page', type: :feature do
     it 'show the title' do
       expect(page.body).to have_content('Welcome to my Blog App')
     end
+
+    it 'redirect to user information' do
+      expect(page) == ('/users/82')
+    end
   end
 end

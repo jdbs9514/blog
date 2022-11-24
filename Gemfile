@@ -54,7 +54,7 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  # gem 'bullet'
+  gem 'bullet'
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
@@ -67,7 +67,7 @@ group :development do
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
-  gem 'bullet'
+  # gem 'bullet'
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
   # gem 'capybara'
