@@ -59,6 +59,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
   gem 'rspec-rails', '>= 3.9.0'
+  gem 'capybara'
 end
 
 group :development do
@@ -70,7 +71,6 @@ group :development do
   # gem 'bullet'
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  # gem 'capybara'
 end
 
 group :test do
@@ -79,4 +79,5 @@ group :test do
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rspec-html-matchers', '~> 0.10.0'
 end
