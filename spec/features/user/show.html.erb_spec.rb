@@ -1,65 +1,51 @@
 require 'rails_helper'
 
 RSpec.describe 'User show page', type: :feature do
-  describe 'show page' do
-    before(:each) do
-      @user = User.create(name: 'Josue', bio: 'This is the bio', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', post_counter: 4)
-      @id = @user.id
-      
-      @post1 = Post.create(author_id: @user, title: 'Hello 1', text: 'This is my first post')
-
-      @post2 = Post.create(author_id: @user, title: 'Hello 2', text: 'This is my second post')
-
-      @post3 = Post.create(author_id: @user, title: 'Hello 3', text: 'This is my third post')
-      
-      @post4 = Post.create(author_id: @user, title: 'Hello 4', text: 'This is my fourth post')
+  describe 'test' do
+    before  :each do
+      @first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', post_counter: 4)
+      @second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.', post_counter: 0)
+      @id = @first_user.id
+      @first_post = Post.create(author_id: @first_user.name, title: 'Hello', text: 'This is my first post')
+      @second_post = Post.create(author_id: @first_user.name, title: 'Hello 2', text: 'This is my first post')
+      @third_post = Post.create(author_id: @first_user.name, title: 'Hello 3', text: 'This is my third post')
+      @fourth_post = Post.create(author_id: @first_user.name, title: 'Hello 4', text: 'This is my fourth post')
       visit user_path(@id)
     end
 
-    it 'show username' do
-      expect(page).to have_content(@user.name)
+    it 'should show the user profile picture' do
+      expect(page).to have_content(@first_user.photo)
+    end
+    
+    it 'should show the user name' do
+      expect(page).to have_content(@first_user.name)
     end
 
-    it 'show page title' do
-      expect(page).to have_content('User information')
+    it 'should show the number of posts' do
+      expect(page).to have_content('Number of posts: 4')
     end
 
-    it 'shows the user photo' do
-      expect(page.body).to include('https://unsplash.com/photos/F_-0BxGuVvo')
+    it 'should show the bio of user' do
+      expect(page).to have_content(@first_user.bio)
     end
 
-    it 'shows number of posts user has written' do
-      expect(page.body).to include('Number of posts: 4')
+    it 'should show the three first posts' do
+      expect(page).to have_content(@fourth_post.author_id)
+      expect(page).to have_content(@second_post.author_id)
+      expect(page).to have_content(@third_post.author_id)
     end
 
-    it 'show the user bio' do
-      expect(page.body).to have_content(@user.bio)
+    it 'should show the button page' do
+      expect(page).to have_content('See all posts')
+      expect(page).to have_content('Create a new post')
+      expect(page).to have_content('Back to users list')
     end
 
-    it 'shows last 3 posts' do
-      expect(page) == ('This is my second post')
-      expect(page) == ('This is my third post')
-      expect(page) == ('This is my fourth post')
-      # expect(page.body).not_to include('This is my first post')
-    end
+    # it 'should redirect to the post information' do
+    #   click_link 'Hello 2'
+    #   expect(current_path).to eq('/users/1/posts/3')
+    # end
 
-    it 'test the see all post button' do
-      expect(page).to have_content('See all post')
-    end
 
-    it 'redirect to post show page when a post is clicked' do
-      click_link('See all posts')
-      expect(current_path) == ('/users/84')
-    end
-
-    it 'test the create a new post' do
-      click_link('Create a new post')
-      expect(current_path) == ('/users/83/posts/new')
-    end
-
-    it 'test the Back to user list' do
-      click_link('Back to users list')
-      expect(current_path) == ('/users')
-    end
   end
 end
