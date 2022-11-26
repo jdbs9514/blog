@@ -1,0 +1,27 @@
+example_id                                         | status | run_time        |
+-------------------------------------------------- | ------ | --------------- |
+./spec/features/post/index.html.erb_spec.rb[1:1:1] | passed | 0.03459 seconds |
+./spec/features/post/index.html.erb_spec.rb[1:1:2] | passed | 0.40002 seconds |
+./spec/features/post/index.html.erb_spec.rb[1:1:3] | passed | 0.03446 seconds |
+./spec/features/post/index.html.erb_spec.rb[1:1:4] | failed | 0.03567 seconds |
+./spec/features/post/index.html.erb_spec.rb[1:1:5] | failed | 0.04031 seconds |
+./spec/features/post/index.html.erb_spec.rb[1:1:6] | failed | 0.0796 seconds  |
+./spec/features/post/show.html.erb_spec.rb[1:1:1]  | passed | 0.02249 seconds |
+./spec/features/post/show.html.erb_spec.rb[1:1:2]  | passed | 0.03373 seconds |
+./spec/features/post/show.html.erb_spec.rb[1:1:3]  | passed | 0.0233 seconds  |
+./spec/features/post/show.html.erb_spec.rb[1:1:4]  | passed | 0.02489 seconds |
+./spec/features/post/show.html.erb_spec.rb[1:1:5]  | passed | 0.02425 seconds |
+./spec/features/post/show.html.erb_spec.rb[1:1:6]  | passed | 0.02438 seconds |
+./spec/features/post/show.html.erb_spec.rb[1:1:7]  | passed | 0.04344 seconds |
+./spec/features/user/index.html.erb_spec.rb[1:1:1] | passed | 0.03667 seconds |
+./spec/features/user/index.html.erb_spec.rb[1:1:2] | passed | 0.15785 seconds |
+./spec/features/user/index.html.erb_spec.rb[1:1:3] | passed | 0.58388 seconds |
+./spec/features/user/index.html.erb_spec.rb[1:1:4] | passed | 0.04295 seconds |
+./spec/features/user/index.html.erb_spec.rb[1:1:5] | passed | 0.15685 seconds |
+./spec/features/user/show.html.erb_spec.rb[1:1:1]  | passed | 0.04979 seconds |
+./spec/features/user/show.html.erb_spec.rb[1:1:2]  | passed | 0.05034 seconds |
+./spec/features/user/show.html.erb_spec.rb[1:1:3]  | passed | 0.05209 seconds |
+./spec/features/user/show.html.erb_spec.rb[1:1:4]  | passed | 0.0479 seconds  |
+./spec/features/user/show.html.erb_spec.rb[1:1:5]  | passed | 0.04914 seconds |
+./spec/features/user/show.html.erb_spec.rb[1:1:6]  | passed | 0.08161 seconds |
+./spec/features/user/show.html.erb_spec.rb[1:1:7]  | failed | 0.6681 seconds  |
